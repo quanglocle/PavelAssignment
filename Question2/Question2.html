@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Question 2</title>
+    <script type="text/javascript" src = 'checkErrorXML.js'></script>
+</head>
+<body>
+    <p> This is the solution of question 2. Press F12 to see the result in console line.</p>
+    <script type="text/javascript">
+    var text = "<a><b><c><d><e><f></f></e></d></c></b></a>";
+    console.log('```html');
+    for (let i = 0; i < text.length; i ++) {
+        if (text[i] == '<') {
+            let j = i + 1;
+            while (j < text.length && text[j] != '>') j ++;
+            if (text.substring(i, j+1).includes('/')){
+                var n = (3 * (text.length - j)) / 4;
+                console.log(' '.repeat(n) + text.substring(i, j + 1));
+            }else{
+            console.log(' '.repeat(i) + text.substring(i, j + 1));
+            }
+            i = j;
+        }
+    }
+    console.log('```');
+    validate(text); 
+  </script>
+</body>
+</html>
