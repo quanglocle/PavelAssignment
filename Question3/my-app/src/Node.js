@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 //import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-//import FaPencil from 'react-icons/lib/fa/pencil';
-//import FaTrash from 'react-icons/lib/fa/trash';
-//import FaFloppyO from 'react-icons/lib/fa/floppy-o';
-
-
 
 class Node extends Component { 
 	constructor(props) {
@@ -17,8 +12,6 @@ class Node extends Component {
 			}]
 		};
 		this.submit = this.submit.bind(this)
-//		this.renderForm = this.renderForm.bind(this, i)
-	//	this.renderDisplay = this.renderDisplay.bind(this)
 	}
 	
 	addClick(){
@@ -56,10 +49,8 @@ class Node extends Component {
 			<p>Tell us about yourself</p>
 				<input placeholder="First Name" name="firstName" type="text"  value={el.firstName ||''} 
 					onChange={this.handleChange.bind(this, i)} />
-
 				<input placeholder="Last Name" name="lastName" type="text" value={el.lastName ||''} 
 					onChange={this.handleChange.bind(this, i)} />
-
 				<input placeholder="Email" name="email" type="text" value={el.email ||''} 
 					onChange={this.handleChange.bind(this, i)} />
 				<input placeholder="Phone Number" name="phone" type="text" value={el.phone ||''} 
@@ -67,29 +58,20 @@ class Node extends Component {
 			<p>Where do you live?</p>
 				<input placeholder="Street Address" name="street_address" type="text" value={el.street_address ||''} 
 					onChange={this.handleChange.bind(this, i)} />
-
 				<input placeholder="Post Code" name="post_code" type="text" value={el.post_code} 
 					onChange={this.handleChange.bind(this, i)} />
-
 				<select placeholder="Country" name="country" type="dropdown"  value={el.country} 
 					onChange={this.handleChange.bind(this, i)} >
 						<option value="NaN" >-- Select your country --</option>
 					  	<option value="Canada">Canada</option>
   						<option value="USA">USA</option>	
 				</select>   
-
 				<input type='button' value='Remove' onClick={this.remove.bind(this, i)}/>
 			</div>
 		))
 	}
 
-//	const options = [
-//		{ value: 'Canada', label: 'Canada' },
-//		{ value: 'USA', label: 'USA' }
-//	];
-
 	render() {
-		
 		return(
 		<div className="node">
 		<form onSubmit= {this.submit}>
@@ -102,5 +84,4 @@ class Node extends Component {
 	}
 
 }
-//	<button onClick={this.save}>Save</button>
-export default Node
+export default Node;
