@@ -43,11 +43,11 @@ class Node extends Component {
 	}
 
 	submit(event) {
-		alert('A person detail was saved: ' + JSON.stringify(this.state.users));
+		alert('The detail of this person was saved as below:' + JSON.stringify(this.state.users, undefined, ' '));
 		event.preventDefault();
 		console.log('```json');
-		console.log(JSON.stringify(this.state.users));
-		console.log('``');
+		console.log(JSON.stringify(this.state.users, undefined, '\t'));
+		console.log('```');
 	}
 
 	renderDisplay() {
